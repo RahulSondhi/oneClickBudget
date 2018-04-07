@@ -19,6 +19,7 @@ html{
     top: 0%;
     left: 0%;
     margin: 0%;
+      background-color: #ADE25D;
 }
 
 #content{
@@ -37,6 +38,7 @@ html{
     bottom: 0;
     left: 0;
     margin: 0px;
+      background-color: #ADE25D;
 }
 
 #leftBarContent{
@@ -46,7 +48,7 @@ html{
   position: absolute;
   left: 0;
   margin: 0px;
-  background-color: red;
+  background-color: #CFFFB3;
 }
 
 #leftBarContentPhotoContainer{
@@ -57,7 +59,7 @@ html{
   left: 5%;
   top: 2%;
   position: absolute;
-  background-color: green;
+  background-color: #3B7080;
 }
 
 #leftBarContentProfileData{
@@ -68,18 +70,18 @@ html{
   top: 27%;
   left: 5%;
   position: absolute;
-  background-color: green;
+  background-color: #3B7080;
 }
 
 #leftBarContentProfileBalance{
   width: 80%;
   padding: 5%;
-  height: 20%;
+  height: 32.5%;
   margin: 0px;
   left: 5%;
   bottom: 2%;
   position: absolute;
-  background-color: green;
+  background-color: #3A5743;
 }
 
 #centerContent{
@@ -89,7 +91,7 @@ html{
   position: absolute;
   left: 20%;
   margin: 0px;
-  background-color: green;
+  background-color: #CFFFB3;
 }
 
 #centerContentTransactionLog{
@@ -100,7 +102,7 @@ html{
   position: absolute;
   top: 2%;
   left: 2%;
-  background-color: red;
+  background-color: #3A5743;
 }
 
 #centerContentButtonContainer{
@@ -111,7 +113,7 @@ html{
   position: absolute;
   bottom: 2%;
   left: 2%;
-  background-color: red;
+  background-color: #CFFFB3;
 }
 
 #rightBarContent{
@@ -121,18 +123,18 @@ html{
   position: absolute;
   left: 70%;
   margin: 0px;
-  background-color: red;
+  background-color: #CFFFB3;
 }
 
 #rightBarContentAssets{
   width: 80%;
       padding: 5%;
-      height: 43%;
+      height: 41.5%;
       margin: 0px;
       left: 5%;
       top: 2%;
       position: absolute;
-      background-color: green;
+      background-color: #3B7080;
 }
 
 #rightBarContentExpenses{
@@ -143,5 +145,5 @@ html{
       left: 5%;
       bottom: 2%;
       position: absolute;
-      background-color: green;
+      background-color: #3A5743;
 }
