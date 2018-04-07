@@ -132,6 +132,7 @@ function incrementDay() {
   var prob2 = Math.random();
   if (Math.abs(prob - prob2).toFixed(1) <= 0.1) {
     console.log("EVENT");
+    $("#eventModal").toggleClass("hidden");
   }
   addAssets();
   removeExpenses();
