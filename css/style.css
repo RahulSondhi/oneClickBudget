@@ -1,0 +1,147 @@
+html{
+  background-color: black;
+}
+
+.screen {
+    position: absolute;
+    background-color: white;
+    overflow: hidden;
+}
+
+.hidden{
+  display: none;
+}
+
+#header{
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: 0%;
+}
+
+#content{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    margin: 0px;
+}
+
+#footer{
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0px;
+}
+
+#leftBarContent{
+  width: 18%;
+  padding: 1%;
+  height: 98%;
+  position: absolute;
+  left: 0;
+  margin: 0px;
+  background-color: red;
+}
+
+#leftBarContentPhotoContainer{
+  width: 80%;
+  padding: 5%;
+  height: 20%;
+  margin: 0px;
+  left: 5%;
+  top: 2%;
+  position: absolute;
+  background-color: green;
+}
+
+#leftBarContentProfileData{
+  width: 80%;
+  padding: 5%;
+  height: 30%;
+  margin: 0px;
+  top: 27%;
+  left: 5%;
+  position: absolute;
+  background-color: green;
+}
+
+#leftBarContentProfileBalance{
+  width: 80%;
+  padding: 5%;
+  height: 20%;
+  margin: 0px;
+  left: 5%;
+  bottom: 2%;
+  position: absolute;
+  background-color: green;
+}
+
+#centerContent{
+  width: 48%;
+  padding: 1%;
+  height: 98%;
+  position: absolute;
+  left: 20%;
+  margin: 0px;
+  background-color: green;
+}
+
+#centerContentTransactionLog{
+  width: 94%;
+  margin: 0px;
+  padding: 1%;
+  height: 36%;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  background-color: red;
+}
+
+#centerContentButtonContainer{
+  width: 94%;
+  margin: 0px;
+  padding: 1%;
+  height: 56%;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  background-color: red;
+}
+
+#rightBarContent{
+  width: 28.5%;
+  padding: 1%;
+  height: 98%;
+  position: absolute;
+  left: 70%;
+  margin: 0px;
+  background-color: red;
+}
+
+#rightBarContentAssets{
+  width: 80%;
+      padding: 5%;
+      height: 43%;
+      margin: 0px;
+      left: 5%;
+      top: 2%;
+      position: absolute;
+      background-color: green;
+}
+
+#rightBarContentExpenses{
+  width: 80%;
+      padding: 5%;
+      height: 43%;
+      margin: 0px;
+      left: 5%;
+      bottom: 2%;
+      position: absolute;
+      background-color: green;
+}

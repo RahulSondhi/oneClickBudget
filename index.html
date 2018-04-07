@@ -2,10 +2,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Something</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="js/resize.js"></script>
   <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="stage" class="screen">
+        <div id="header"></div>
+        <div id="content">
+          <div id="leftBarContent">
+            <div id="leftBarContentPhotoContainer"></div>
+            <div id="leftBarContentProfileData"></div>
+            <div id="leftBarContentProfileBalance"></div>
+          </div>
+          <div id="centerContent">
+              <div id="centerContentTransactionLog"></div>
+              <div id="centerContentButtonContainer"></div>
+          </div>
+          <div id="rightBarContent">
+            <div id="rightBarContentAssets"></div>
+            <div id="rightBarContentExpenses"></div>
+          </div>
+        </div>
+        <div id="footer"></div>
+    </div>
 </body>
 </html>
