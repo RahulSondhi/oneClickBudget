@@ -52,14 +52,62 @@ html{
 }
 
 #leftBarContentPhotoContainer{
-  width: 80%;
-  padding: 5%;
-  height: 20%;
+  width: 86%;
+  padding: 2%;
+  height: 22%;
   margin: 0px;
   left: 5%;
   top: 2%;
   position: absolute;
   background-color: #3B7080;
+}
+
+#profilePic{
+  width: 100%;
+  height: 100%;
+}
+
+hr{
+  margin: 0;
+  margin-bottom: 5%;
+  border-width: 0.0625rem;
+}
+#profileName{
+  width: 100%;
+  height: 12%;
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+#profileStatus,
+#profileHousing,
+#profileDependants,
+#profileEmployment{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+}
+
+#profileStatusTitle,
+#profileHousingTitle,
+#profileEmploymentTitle,
+#profileDependantsTitle{
+  font-size: 1.2rem;
+  width: 40%;
+  color: white;
+}
+
+#profileStatusContent,
+#profileEmploymentContent,
+#profileHousingContent,
+#profileDependantsContent{
+  font-size: 1.2rem;
+  text-align: center;
+  width: 55%;
+  margin-left: 5%;
 }
 
 #leftBarContentProfileData{
@@ -113,7 +161,27 @@ html{
   position: absolute;
   bottom: 2%;
   left: 2%;
-  background-color: #CFFFB3;
+  background-color: #3B7080;
+}
+
+#centerContentButton{
+  width: 42%;
+  height: 49%;
+  left: 30%;
+  top: 25%;
+  border-radius: 100%;
+  position: absolute;
+  background-color: grey;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-image: url("../images/clickerbuttonround.png");
+  background-position: center;
+  background-size:contain;
+}
+
+#centerContentButton:active {
+  box-shadow: 0 0.3125rem grey;
+  transform: translateY(0.3rem);
 }
 
 #rightBarContent{
@@ -134,7 +202,7 @@ html{
       left: 5%;
       top: 2%;
       position: absolute;
-      background-color: #3B7080;
+      background-color: #3A5743;
 }
 
 #rightBarContentExpenses{
@@ -146,4 +214,39 @@ html{
       bottom: 2%;
       position: absolute;
       background-color: #3A5743;
+}
+
+
+#rightBarContentAssetsTitle,
+#rightBarContentExpensesTitle,
+#centerContentTransactionLogTitle,
+#leftBarContentProfileBalanceTitle{
+  width: 100%;
+  height: 10%;
+  margin: 0;
+  color: #CFFFB3;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#rightBarContentAssetsContent,
+#rightBarContentExpensesContent,
+#centerContentTransactionLogContent{
+  width: 100%;
+  height: 90%;
+  margin: 0;
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#leftBarContentProfileBalanceContent{
+  width: 90%;
+  height: 20%;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  text-align: center;
+  background-color: white;
+  font-size: 2rem;
 }

@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Something</title>
@@ -7,25 +8,66 @@
   <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div id="stage" class="screen">
-        <div id="header"></div>
-        <div id="content">
-          <div id="leftBarContent">
-            <div id="leftBarContentPhotoContainer"></div>
-            <div id="leftBarContentProfileData"></div>
-            <div id="leftBarContentProfileBalance"></div>
-          </div>
-          <div id="centerContent">
-              <div id="centerContentTransactionLog"></div>
-              <div id="centerContentButtonContainer"></div>
-          </div>
-          <div id="rightBarContent">
-            <div id="rightBarContentAssets"></div>
-            <div id="rightBarContentExpenses"></div>
-          </div>
+  <div id="stage" class="screen">
+    <div id="header"></div>
+    <div id="content">
+      <div id="leftBarContent">
+        <div id="leftBarContentPhotoContainer">
+          <img id="profilePic" src="images/profilepicture.png" alt="Profile Pic">
         </div>
-        <div id="footer"></div>
+        <div id="leftBarContentProfileData">
+          <div id="profileName">Bitcamp Student</div>
+          <hr>
+          <div id="profileStatus">
+            <div id="profileStatusTitle">Marital Status: </div>
+            <div id="profileStatusContent">Single</div>
+          </div>
+
+          <div id="profileEmployment">
+            <div id="profileEmploymentTitle">Employment: </div>
+            <div id="profileEmploymentContent">None</div>
+          </div>
+
+          <div id="profileHousing">
+            <div id="profileHousingTitle">Housing: </div>
+            <div id="profileHousingContent">None</div>
+          </div>
+
+          <div id="profileDependants">
+            <div id="profileDependantsTitle">Dependants: </div>
+            <div id="profileDependantsContent">None</div>
+          </div>
+
+        </div>
+        <div id="leftBarContentProfileBalance">
+          <div id="leftBarContentProfileBalanceTitle">Balance</div>
+          <div id="leftBarContentProfileBalanceContent"></div>
+        </div>
+      </div>
+      <div id="centerContent">
+        <div id="centerContentTransactionLog">
+          <div id="centerContentTransactionLogTitle">Transactions</div>
+          <div id="centerContentTransactionLogContent"></div>
+        </div>
+        <div id="centerContentButtonContainer">
+          <div id="centerContentButton"></div>
+        </div>
+      </div>
+      <div id="rightBarContent">
+        <div id="rightBarContentAssets">
+          <div id="rightBarContentAssetsTitle">Assets</div>
+          <div id="rightBarContentAssetsContent"></div>
+        </div>
+        <div id="rightBarContentExpenses">
+          <div id="rightBarContentExpensesTitle">Expenses</div>
+          <div id="rightBarContentExpensesContent"></div>
+        </div>
+      </div>
     </div>
+    <div id="footer"></div>
+  </div>
 </body>
+
 </html>
