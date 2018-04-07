@@ -1,5 +1,7 @@
 html{
   background-color: black;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .screen {
@@ -19,7 +21,7 @@ html{
   flex-direction: row;
   height: 10%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding: 0.5%;
 }
 
@@ -62,6 +64,15 @@ html{
   width: 30%;
 }
 
+#screenCover{
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  opacity: 0.6;
+  z-index: 100;
+  position: absolute;
+}
+
 #eventModal{
   width: 50%;
   height: 50%;
@@ -85,23 +96,61 @@ html{
   height: 10%;
   padding: 1%;
   position: absolute;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 #eventModalClose{
-  width: 20%;
-  right: 2%;
-  height: 10%;
-  padding: 1%;
+  width: 5%;
+  right: 0.5%;
+  height: 4%;
+  top: 0;
+  padding: 0%;
   position: absolute;
-  font-size: 1.3rem;
+  font-size: 2.5rem;
+}
+
+#eventModalClose:hover{
+  color: #ff0303;
 }
 
 #eventModalContent{
+  width: 100%;
+  height: 90%;
+  background-color: #CFFFB3;
+}
+
+#eventModalScenario{
   width: 90%;
   padding: 5%;
-  height: 80%;
-  background-color: #CFFFB3;
+  height: 40%;
+}
+
+#eventModalChoices{
+  width: 90%;
+  padding: 5%;
+  height: 30%;
+  display: flex;
+}
+
+#eventModalTrueChoice,
+#eventModalFalseChoice{
+  width: 30%;
+  padding: 5%;
+  padding-top: 2.5%;
+  text-align: center;
+  margin: 5%;
+  background-color: #3B7080;
+  border-radius: 1rem;
+  box-shadow: 0.3125rem 0.3125rem 0.3125rem grey;
+  cursor: pointer;
+  font-size: 2.6rem;
+      color: white;
+}
+
+#eventModalTrueChoice:active,
+#eventModalFalseChoice:active{
+  box-shadow: 0 0.3125rem grey;
+  transform: translateY(0.3rem);
 }
 
 #header{
@@ -111,7 +160,7 @@ html{
     top: 0%;
     left: 0%;
     margin: 0%;
-      background-color: #ADE25D;
+    background-color: #ADE25D;
 }
 
 #content{
@@ -163,6 +212,8 @@ hr{
   margin: 0;
   margin-bottom: 5%;
   border-width: 0.0625rem;
+  color: #ADE25D;
+  border-color: #ADE25D;
 }
 #profileName{
   width: 100%;
@@ -170,7 +221,7 @@ hr{
   text-align: center;
   font-family: "Impact", sans-serif;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 
@@ -191,7 +242,7 @@ hr{
 #profileHousingTitle,
 #profileEmploymentTitle,
 #profileDependantsTitle{
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   width: 40%;
   color: white;
 }
@@ -200,7 +251,7 @@ hr{
 #profileEmploymentContent,
 #profileHousingContent,
 #profileDependantsContent{
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   text-align: center;
   width: 55%;
   margin-left: 5%;
@@ -332,7 +383,7 @@ hr{
 #rightBarContentExpensesContent,
 #centerContentTransactionLogContent{
   width: 100%;
-  height: 90%;
+  height: 80%;
   margin: 0;
   color: #CFFFB3;
   font-family: "American Typewriter", monospace;

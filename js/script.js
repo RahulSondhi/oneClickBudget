@@ -8,6 +8,10 @@ $(function() {
     incrementDay();
   });
 
+  $("#eventModalClose").click(function(){
+    $("#eventModal").toggleClass("hidden");
+    $("#screenCover").toggleClass("hidden");
+  });
 });
 
 function setupAccount() {
@@ -133,6 +137,7 @@ function incrementDay() {
   if (Math.abs(prob - prob2).toFixed(1) <= 0.1) {
     console.log("EVENT");
     $("#eventModal").toggleClass("hidden");
+    $("#screenCover").toggleClass("hidden");
   }
   addAssets();
   removeExpenses();

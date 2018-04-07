@@ -14,16 +14,17 @@
     <div id="eventModal" class="hidden">
       <div id="eventModalHeader">
         <div id="eventModalTitle">Financial Choice!</div>
-        <div id="eventModalClose">X</div>
+        <div id="eventModalClose">×</div>
       </div>
       <div id="eventModalContent">
-          <div id="eventModalContent"></div>
+          <div id="eventModalScenario"></div>
           <div id="eventModalChoices">
-            <div id="eventModalTrueChoice"></div>
-            <div id="eventModalFalseChoice"></div>
+            <div id="eventModalTrueChoice">Yes</div>
+            <div id="eventModalFalseChoice">No</div>
           </div>
       </div>
     </div>
+    <div id="screenCover" class="hidden"></div>
     <div id="header"></div>
     <div id="content">
       <div id="leftBarContent">
@@ -56,12 +57,14 @@
         </div>
         <div id="leftBarContentProfileBalance">
           <div id="leftBarContentProfileBalanceTitle">Balance</div>
+          <hr>
           <div id="leftBarContentProfileBalanceContent"></div>
         </div>
       </div>
       <div id="centerContent">
         <div id="centerContentTransactionLog">
           <div id="centerContentTransactionLogTitle">Transactions</div>
+          <hr>
           <div id="centerContentTransactionLogContent"></div>
         </div>
         <div id="centerContentButtonContainer">
@@ -71,10 +74,12 @@
       <div id="rightBarContent">
         <div id="rightBarContentAssets">
           <div id="rightBarContentAssetsTitle">Assets</div>
+          <hr>
           <div id="rightBarContentAssetsContent"></div>
         </div>
         <div id="rightBarContentExpenses">
           <div id="rightBarContentExpensesTitle">Expenses</div>
+          <hr>
           <div id="rightBarContentExpensesContent"></div>
         </div>
       </div>
