@@ -42,13 +42,14 @@ function updateInfo() {
   $("#profileDependantsContent").html(acctInfo.dependants);
   $("#profileHousingContent").html(acctInfo.housing);
   $("#leftBarContentProfileBalanceContent").html("$" + acctInfo.balance.toFixed(2));
-  $("#rightBarContentAssetsContent").html("");
-  $("#rightBarContentExpensesContent").html("");
+
   updateAssets();
   updateExpenses();
+  updateAllTransactions();
 }
 
 function updateAssets() {
+  $("#rightBarContentAssetsContent").html("");
   var assets = acctInfo.assets;
   for (var i = 0; i < assets.length; i++) {
     var assetItem = $("<div></div>");
@@ -90,6 +91,7 @@ function updateAssets() {
 }
 
 function updateExpenses() {
+  $("#rightBarContentExpensesContent").html("");
   var expenses = acctInfo.expenses;
   for (var i = 0; i < expenses.length; i++) {
     var expenseItem = $("<div></div>");
@@ -127,6 +129,14 @@ function updateExpenses() {
     expenseItem.append(expenseItemMoney);
     expenseItem.append(expenseItemFreq);
     $("#rightBarContentExpensesContent").append(expenseItem);
+  }
+}
+
+function updateAllTransactions(){
+  $("#centerContentTransactionLogContent").html("");
+  var transaction = acctInfo.transaction;
+  for (var i = 0; i < transaction.length; i++) {
+    viewTransaction(transaction[i]);
   }
 }
 
@@ -174,7 +184,6 @@ function updateTransactions(add, money, desc) {
     transaction.type = "WITHDRAWAL";
   }
   acctInfo.transaction.push(transaction);
-  viewTransaction(transaction);
 }
 
 function viewTransaction(order) {
