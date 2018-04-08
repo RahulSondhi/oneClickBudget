@@ -1,4 +1,4 @@
-var acctInfo;
+var acctInfo = [];
 
 $(function() {
 
@@ -13,8 +13,18 @@ $(function() {
 });
 
 function setupAccount() {
-  acctInfo = getUserThings(acctInfo);
-  console.log(acctInfo);
+  var tempInfo = getUserThings(tempInfo);
+  tempInfo = tempInfo[0];
+  acctInfo.status = tempInfo.status;
+  acctInfo.employment = tempInfo.employment;
+  acctInfo.dependants = tempInfo.dependants;
+  acctInfo.housing = tempInfo.housing;
+  acctInfo.balance = tempInfo.balance;
+  acctInfo.assets = tempInfo.assets;
+  acctInfo.expenses = tempInfo.expenses;
+  acctInfo.transaction = tempInfo.transaction;
+  acctInfo.day = tempInfo.day;
+  console.log(acctInfo)
   updateInfo(acctInfo);
 }
 

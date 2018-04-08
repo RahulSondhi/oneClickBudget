@@ -19,9 +19,15 @@ function pullCase(d) {
 function userPull(d) {
 	d.find({}).execute().then(docs => {
 		user = docs
-		setupAccount();
 		console.log(user)
 		console.log("Done")
+	})
+	d.find({}).execute().then(docs => {
+		d.find({}).execute().then(docs => {
+			d.find({}).execute().then(docs => {
+				setTimeout(function () {setupAccount();}, 10000);
+			})
+		})
 	})
 }
 
