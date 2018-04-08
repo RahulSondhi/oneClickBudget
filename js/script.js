@@ -7,7 +7,7 @@ $(function() {
     incrementDay();
   });
 
-  $("#eventModalClose").click(function(){
+  $("#eventModalClose").click(function() {
     $("#eventModal").toggleClass("hidden");
     $("#screenCover").toggleClass("hidden");
   });
@@ -46,7 +46,7 @@ function setupAccount() {
 
   var tempInfo = getCaseThings(tempInfo);
   scenarios = tempInfo;
-  console.log(acctInfo,tempInfo)
+  console.log(acctInfo, tempInfo)
   updateInfo();
 }
 
@@ -146,7 +146,7 @@ function updateExpenses() {
   }
 }
 
-function updateAllTransactions(){
+function updateAllTransactions() {
   $("#centerContentTransactionLogContent").html("");
   var transaction = acctInfo.transaction;
   for (var i = 0; i < transaction.length; i++) {
@@ -166,8 +166,8 @@ function incrementDay() {
   updateInfo();
 }
 
-function initEvent(){
-  var currentEvt = scenarios[getRandomInt(0,15)];
+function initEvent() {
+  var currentEvt = scenarios[getRandomInt(0, 15)];
   console.log(currentEvt);
   $("#eventModalTitle").html(currentEvt.TransactionName);
   $("#eventModalScenario").html(currentEvt.Scenario);
@@ -176,38 +176,68 @@ function initEvent(){
   $("#screenCover").toggleClass("hidden");
 }
 
-function setEventButtons(currentEvt){
+function setEventButtons(currentEvt) {
   $("#eventModalTrueChoice").off();
   $("#eventModalFalseChoice").off();
-  $("#eventModalTrueChoice").click(function(){
-    if(AssetName != ""){
-      var tempAsset = {};
-      tempAsset.name=currentEvt.name;
+  $("#eventModalTrueChoice").click(function() {
 
+    if (currentEvt.AssetName.length > 0) {
+      var tempAsset = {};
+      tempAsset.name = currentEvt.AssetName;
+      tempAsset.frequency = currentEvt.AssetFrequency;
       var assets = acctInfo.assets;
       var x = -1;
       for (var i = 0; i < assets.length; i++) {
-        if(assets[i].name=="Job"){
+        if (assets[i].name == "Job") {
           x = i;
         }
       }
 
-      if(x != -1){
-      tempAsset.gain=(assets[x]*currentEvt.dIncomePercent);
+      if (x != -1 && currentEvt.dIncomePercent > 0) {
+        tempAsset.gain = (assets[x].gain * currentEvt.dIncomePercent);
+      } else {
+        tempAsset.gain = Math.abs(currentEvt.dMoney);
       }
+      acctInfo.assets.push(tempAsset);
+      console.log(acctInfo,tempAsset);
     }
 
-    // acctInfo.assets = [{
-    //   name: "Job",
-    //   gain: 50.30,
-    //   frequency: 7
-    // }];
+    if (currentEvt.ExpenseName.length > 0) {
+      var tempExpense = {};
+      tempExpense.name = currentEvt.ExpenseName;
+      tempExpense.frequency = currentEvt.ExpenseFrequency;
+      var expense = acctInfo.expenses;
+      var assets = acctInfo.assets;
+      var y = -1;
+      for (var i = 0; i < assets.length; i++) {
+        if (assets[i].name == "Job") {
+          y = i;
+        }
+      }
+
+    if (y != -1 && currentEvt.dIncomePercent < 0) {
+        tempExpense.loss = (expense[y].loss * currentEvt.dIncomePercent);
+      } else {
+        tempExpense.loss = Math.abs(currentEvt.dMoney);
+      }
+
+      acctInfo.expenses.push(tempExpense);
+      console.log(acctInfo,tempExpense);
+    }
+
+    acctInfo.balance = acctInfo.balance +  Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2));
+    if(currentEvt.money < 0){
+          updateTransactions(false,  Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2)), currentEvt.TransactionName);
+    }else{
+          updateTransactions(true, Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2)), currentEvt.TransactionName);
+    }
+    updateInfo();
 
     $("#eventModal").toggleClass("hidden");
     $("#screenCover").toggleClass("hidden");
   });
 
-  $("#eventModalFalseChoice").click(function(){
+  $("#eventModalFalseChoice").click(function() {
 
     $("#eventModal").toggleClass("hidden");
     $("#screenCover").toggleClass("hidden");
