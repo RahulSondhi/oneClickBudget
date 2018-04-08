@@ -24,8 +24,7 @@ function setupAccount() {
   acctInfo.expenses = tempInfo.expenses;
   acctInfo.transaction = tempInfo.transaction;
   acctInfo.day = tempInfo.day;
-  console.log(acctInfo.assets)
-  console.log(acctInfo)
+  console.log(acctInfo,tempInfo)
   updateInfo(acctInfo);
 }
 
