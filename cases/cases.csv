@@ -9,9 +9,9 @@ A young girl knocks on your door. She's selling girl scout cookies for $5 per bo
 Will you renew Netflix this month?,0,-10,,,,,,,30,Netflix,-1,-1
 "A few of your coworkers are heading out for lunch. Do you join them, or eat what you brought to work?",0,-15,,,,,,,-1,Lunch with Coworkers,-1,-1
 Your spouse wants to have a baby! What do you think?,0,-100,,Child Stuff,Child,,,,7,Child Stuff,-1,7
-"You wanna relax and call in sick from work, what do you think?",-0.05,0,Demotion,,,,,,14,Salary Cut! Got Caught,-1,-1
+"You wanna relax and call in sick from work, what do you think?",-0.05,0,,,,,,,14,Salary Cut! Got Caught,-1,-1
 Spotify Premium is on sale! Lock in now for only 5$ a month! ,0,5,,,,,,,30,Spotify Premium,-1,30
-"Nasdaq Skyrockets, invest some money in it?",0.1,-100,Nasdaq,,,,,,30,Nasdaq,1,-1
+"Nasdaq Skyrockets, invest some money in it?",0.1,-100,Nasdaq,,,,,,30,Nasdaq,30,-1
 The apartment you were looking at is available. Buy it?,0,-700,,Apartment,,Apartment,,,31,Apartment,-1,30
 The house you were looking at is available. Buy it?,0,-1400,,House,,House,,,31,House,-1,30
 Your preformance at work has been noticed. You are offered a raise. Take it?,0.2,0,Promotion,,,,Promotion,,14,Job,14,-1

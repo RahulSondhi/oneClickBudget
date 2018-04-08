@@ -137,7 +137,7 @@ function updateExpenses() {
     expenseItemDesc.html(expenses[i].name);
     var expenseItemMoney = $("<div></div>");
     expenseItemMoney.attr("class", "expenseItemMoney");
-    expenseItemMoney.html("$" + expenses[i].loss.toFixed(2));
+    expenseItemMoney.html("-$" + expenses[i].loss.toFixed(2));
 
     expenseItem.append(expenseItemDesc);
     expenseItem.append(expenseItemMoney);
