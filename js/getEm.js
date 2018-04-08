@@ -1,19 +1,37 @@
 let stitchClient;
 let stitchClientt;
 let appId = 'oneclickbudget-xueak';
-let appIdd= 'useroneclickbudget-vksnm'
+let appIdd= 'useroneclickbudget-vksnm';
+var case = null;
+var user = null;
+
+$(function() {
+	initApplication();
+	initUserApplication();
+})
+
 function pullCase(d) {
 	d.find({}).execute().then(docs => {
-		console.log(docs)
+		console.log(case = docs)
 		console.log("Done")
 	})
 }
+
 function userPull(d) {
 	d.find({}).execute().then(docs => {
-		console.log(docs)
+		console.log(user = docs)
 		console.log("Done")
 	})
 }
+
+function getUserThings(){
+	return user;
+}
+
+function getCaseThings(){
+	return case;
+}
+
 function editUserStats(d,spouse,job,children,house,balance,assests, expenses,transaction,day)
  {
 	d.updateOne(
