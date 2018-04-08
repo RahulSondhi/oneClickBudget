@@ -14,39 +14,39 @@ $(function() {
 });
 
 function setupAccount() {
-  // var tempInfo = getUserThings(tempInfo);
-  // tempInfo = tempInfo[0];
-  // acctInfo.status = tempInfo.status;
-  // acctInfo.employment = tempInfo.employment;
-  // acctInfo.dependants = tempInfo.dependants;
-  // acctInfo.housing = tempInfo.housing;
-  // acctInfo.balance = tempInfo.balance;
-  // acctInfo.assets = tempInfo.assets;
-  // acctInfo.expenses = tempInfo.expenses;
-  // acctInfo.transaction = tempInfo.transaction;
-  // acctInfo.day = tempInfo.day;
-  acctInfo.status = "Single";
-  acctInfo.employment = "Employed";
-  acctInfo.dependants = "none";
-  acctInfo.housing = "none";
-  acctInfo.balance = 100.10;
-  acctInfo.assets = [{
-    name: "Job",
-    gain: 50.30,
-    frequency: 7
-  }];
-  acctInfo.expenses = [{
-    name: "Food",
-    loss: 4.00,
-    frequency: 1
-  }];
-  acctInfo.transaction = [];
-  acctInfo.day = 0;
-  console.log(acctInfo)
+  var tempInfo = getUserThings(tempInfo);
+  tempInfo = tempInfo[0];
+  acctInfo.status = tempInfo.status;
+  acctInfo.employment = tempInfo.employment;
+  acctInfo.dependants = tempInfo.dependants;
+  acctInfo.housing = tempInfo.housing;
+  acctInfo.balance = tempInfo.balance;
+  acctInfo.assets = tempInfo.assets;
+  acctInfo.expenses = tempInfo.expenses;
+  acctInfo.transaction = tempInfo.transaction;
+  acctInfo.day = tempInfo.day;
+  // acctInfo.status = "Single";
+  // acctInfo.employment = "Employed";
+  // acctInfo.dependants = "none";
+  // acctInfo.housing = "none";
+  // acctInfo.balance = 100.10;
+  // acctInfo.assets = [{
+  //   name: "Job",
+  //   gain: 50.30,
+  //   frequency: 7
+  // }];
+  // acctInfo.expenses = [{
+  //   name: "Food",
+  //   loss: 4.00,
+  //   frequency: 1
+  // }];
+  // acctInfo.transaction = [];
+  // acctInfo.day = 0;
+  // console.log(acctInfo)
 
   var tempInfo = getCaseThings(tempInfo);
   scenarios = tempInfo;
-  console.log(tempInfo)
+  console.log(acctInfo,tempInfo)
   updateInfo();
 }
 
@@ -168,15 +168,40 @@ function incrementDay() {
 
 function initEvent(){
   var currentEvt = scenarios[getRandomInt(0,15)];
+  console.log(currentEvt);
   $("#eventModalTitle").html(currentEvt.TransactionName);
-  $("#eventModalScenario").html(currentEvt.scenario);
-  setEventButtons();
+  $("#eventModalScenario").html(currentEvt.Scenario);
+  setEventButtons(currentEvt);
   $("#eventModal").toggleClass("hidden");
   $("#screenCover").toggleClass("hidden");
 }
 
-function setEventButtons(){
+function setEventButtons(currentEvt){
+  $("#eventModalTrueChoice").off();
+  $("#eventModalFalseChoice").off();
   $("#eventModalTrueChoice").click(function(){
+    if(AssetName != ""){
+      var tempAsset = {};
+      tempAsset.name=currentEvt.name;
+
+      var assets = acctInfo.assets;
+      var x = -1;
+      for (var i = 0; i < assets.length; i++) {
+        if(assets[i].name=="Job"){
+          x = i;
+        }
+      }
+
+      if(x != -1){
+      tempAsset.gain=(assets[x]*currentEvt.dIncomePercent);
+      }
+    }
+
+    // acctInfo.assets = [{
+    //   name: "Job",
+    //   gain: 50.30,
+    //   frequency: 7
+    // }];
 
     $("#eventModal").toggleClass("hidden");
     $("#screenCover").toggleClass("hidden");
