@@ -24,12 +24,13 @@ function setupAccount() {
   acctInfo.expenses = tempInfo.expenses;
   acctInfo.transaction = tempInfo.transaction;
   acctInfo.day = tempInfo.day;
+  console.log(acctInfo.assets)
   console.log(acctInfo)
   updateInfo(acctInfo);
 }
 
 function updateInfo(acctInfo) {
-  $("#profileStatusContent").html(acctInfo["status"]);
+  $("#profileStatusContent").html(acctInfo.status);
   $("#profileEmploymentContent").html(acctInfo.employment);
   $("#profileDependantsContent").html(acctInfo.dependants);
   $("#profileHousingContent").html(acctInfo.housing);

@@ -25,7 +25,11 @@ function userPull(d) {
 	d.find({}).execute().then(docs => {
 		d.find({}).execute().then(docs => {
 			d.find({}).execute().then(docs => {
+				d.find({}).execute().then(doc => {
+					d.find({}).execute().then(doc => {
 				setTimeout(function () {setupAccount();}, 10000);
+					})
+				})
 			})
 		})
 	})
@@ -41,7 +45,7 @@ function getCaseThings(caseInfo){
 	return caseInfo;
 }
 
-function editUserStats(d,spouse,job,children,house,balance,assests, expenses,transaction,day)
+function editUserStats(d,spouse,job,children,house,balance,assets, expenses,transaction,day)
  {
 	d.updateOne(
 		{"status":spouse,
@@ -49,14 +53,14 @@ function editUserStats(d,spouse,job,children,house,balance,assests, expenses,tra
 		"dependants": children,
 		"housing":house,
 		"balance": balance,
-		"assests": assests,
+		"assets": assets,
 		"expenses": expenses,
 		"transaction": transaction,
 		"day": day
 	}
 	)
 }
-function addUser(d,spouse,job,children,house,balance, assests, expenses, transaction, day)
+function addUser(d,spouse,job,children,house,balance, assets, expenses, transaction, day)
  {
 	d.insertOne(
 		{"status":spouse,
@@ -64,7 +68,7 @@ function addUser(d,spouse,job,children,house,balance, assests, expenses, transac
 		"dependants": children,
 		"housing":house,
 		"balance": balance,
-		"assests": assests,
+		"assets": assets,
 		"expenses": expenses,
 		"transaction": [],
 		"day": 0
@@ -80,11 +84,7 @@ function initApplication() {
 	}).then(() => {
 		const db = stitchClient.service('mongodb', 'mongodb-atlas').db('oneBudget');
 		const coll = db.collection('MongoDB');
-		stitchClient.login().then(() =>
-			coll.updateOne({owner_id: stitchClient.authedId()}, {$set:{number:42}}, {upsert:true})
-		).then(()=>
-			coll.find({owner_id: stitchClient.authedId()}).limit(100).execute()
-		).then(docs => {
+		stitchClient.login().then(docs => {
 			console.log("Found docs", docs)
 			console.log("[MongoDB Stitch]Connected to Case App")
 			pullCase(coll)
@@ -100,15 +100,10 @@ function initUserApplication() {
 	}).then(() => {
 		const dbb = stitchClientt.service('mongodb', 'mongodb-atlas').db('userOneBudget');
 		const colll = dbb.collection('user');
-		stitchClientt.login().then(() =>
-			colll.updateOne({owner_id: stitchClientt.authedId()}, {$set:{number:42}}, {upsert:true})
-		).then(()=>
-			colll.find({owner_id: stitchClientt.authedId()}).limit(100).execute()
-		).then(docs => {
+		stitchClientt.login().then(docs => {
 			console.log("Found docs", docs)
 			console.log("[MongoDB Stitch]Connected to User App")
-			clearDebug(colll)
-			addUser(colll, "Single", "Employed", "none", "none", 100.00, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
+			editUserStats(colll, "Single", "Employed", "none", "none", 100.00, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
 			userPull(colll)
 			}).catch(err => {
 			console.error(err)
