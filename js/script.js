@@ -3,8 +3,6 @@ var scenarios = [];
 
 $(function() {
 
-  setSky();
-
   $("#centerContentButton").click(function() {
     incrementDay();
   });
@@ -14,15 +12,6 @@ $(function() {
     $("#screenCover").toggleClass("hidden");
   });
 });
-
-
-function setSky() {
-  var time = new Date();
-  $("#stage").addClass("sky-gradient-"+time.getHours());
-  window.setTimeout(function() {
-      setSky();
-  }, 60000);
-}
 
 function setupAccount() {
   var tempInfo = getUserThings(tempInfo);
@@ -309,8 +298,12 @@ function viewTransaction(order) {
   transactionDesc.html(order.desc);
   var transactionMoney = $("<div></div>");
   transactionMoney.attr("class", "transactionItemMoney");
+  if (order.type=="WITHDRAWAL") {
+  transactionMoney.html("-$" + order.money.toFixed(2));
+}
+else {
   transactionMoney.html("$" + order.money.toFixed(2));
-
+}
   transaction.append(transactionType);
   transaction.append(transactionDesc);
   transaction.append(transactionMoney);
