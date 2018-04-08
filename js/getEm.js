@@ -1,7 +1,7 @@
 let caseStitchClient;
 let userStitchClient;
 let caseAppId = 'oneclickbudget-xueak';
-let userAppId= 'useroneclickbudget-vksnm';
+let userAppId = 'useroneclickbudget-vksnm';
 let cases = null;
 let user = null;
 
@@ -62,12 +62,23 @@ function addUser(d,spouse,job,children,house,balance,assets,expenses,transaction
 }
 function clearDebug(d) {
 	d.deleteMany({});
-	addUser(d, "Single", "Employed", "none", "none", 100.00,
-		[{name: "Job", gain: 440.00, frequency: 14}],
-		[{name: "Food", loss: 8.00, frequency: 1},
-		{name: "Gas", loss: 30.00, frequency: 7},
-		{name: "Personal Care", loss: 14.86, frequency: 7}],
-		[],0);
+	addUser(d, "Single", "Employed", "none", "none", 100.00, [{
+			name: "Job",
+			gain: 440.00,
+			frequency: 14
+		}], [{
+			name: "Food",
+			loss: 8.00,
+			frequency: 1
+		}, {
+			name: "Gas",
+			loss: 30.00,
+			frequency: 7
+		}, {
+			name: "Personal Care",
+			loss: 14.86,
+			frequency: 7
+		}], [], 0);
 }
 
 function initApplication() {
