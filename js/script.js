@@ -224,9 +224,13 @@ function setEventButtons(currentEvt) {
       acctInfo.expenses.push(tempExpense);
       console.log(acctInfo,tempExpense);
     }
-
-    acctInfo.balance = acctInfo.balance +  Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2));
-    if(currentEvt.money < 0){
+    if(currentEvt.dMoney < 0) {
+      acctInfo.balance = acctInfo.balance - Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2));
+    }
+    else {
+      acctInfo.balance = acctInfo.balance +  Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2));
+    }
+    if(currentEvt.dMoney < 0){
           updateTransactions(false,  Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2)), currentEvt.TransactionName);
     }else{
           updateTransactions(true, Math.abs(Number.parseFloat(currentEvt.dMoney).toFixed(2)), currentEvt.TransactionName);
