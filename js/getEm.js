@@ -24,8 +24,8 @@ function editUserStats(d,spouse,job,children,house,balance,assests, expenses,tra
 		"balance": balance,
 		"assests": assests,
 		"expenses": expenses,
-		"transaction": [],
-		"day": 0
+		"transaction": transaction,
+		"day": day
 	}
 	)
 }
@@ -80,7 +80,7 @@ function initUserApplication() {
 			console.log("Found docs", docs)
 			console.log("[MongoDB Stitch]Connected to User App")
 			clearDebug(colll)
-			addUser(colll, "Single", "Employed", "none", "none", 100, [{name: "Job", gain: 50.30, frequency: 7}], [{name: "Food", loss: 4.00, frequency: 1}], [],0)
+			addUser(colll, "Single", "Employed", "none", "none", 100, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
 			userPull(colll)
 		}).catch(err => {
 			console.error(err)
