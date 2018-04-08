@@ -1,7 +1,6 @@
 var acctInfo;
 
 $(function() {
-
   setupAccount();
 
   $("#centerContentButton").click(function() {
@@ -16,11 +15,13 @@ $(function() {
 
 function setupAccount() {
   acctInfo = getUserThings();
-  updateInfo();
+  console.log(acctInfo);
+  updateInfo(acctInfo);
 }
 
-function updateInfo() {
-  $("#profileStatusContent").html(acctInfo.status);
+function updateInfo(acctInfo) {
+  console.log(acctInfo);
+  $("#profileStatusContent").html(acctInfo["status"]);
   $("#profileEmploymentContent").html(acctInfo.employment);
   $("#profileDependantsContent").html(acctInfo.dependants);
   $("#profileHousingContent").html(acctInfo.housing);

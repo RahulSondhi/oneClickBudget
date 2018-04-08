@@ -2,7 +2,7 @@ let stitchClient;
 let stitchClientt;
 let appId = 'oneclickbudget-xueak';
 let appIdd= 'useroneclickbudget-vksnm';
-var case = null;
+var caser = null;
 var user = null;
 
 $(function() {
@@ -12,14 +12,15 @@ $(function() {
 
 function pullCase(d) {
 	d.find({}).execute().then(docs => {
-		console.log(case = docs)
+		caser = docs
+		console.log(caser)
 		console.log("Done")
 	})
 }
-
 function userPull(d) {
 	d.find({}).execute().then(docs => {
-		console.log(user = docs)
+		user = docs
+		console.log(user)
 		console.log("Done")
 	})
 }
@@ -29,7 +30,7 @@ function getUserThings(){
 }
 
 function getCaseThings(){
-	return case;
+	return caser;
 }
 
 function editUserStats(d,spouse,job,children,house,balance,assests, expenses,transaction,day)
@@ -100,7 +101,7 @@ function initUserApplication() {
 			clearDebug(colll)
 			addUser(colll, "Single", "Employed", "none", "none", 100, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
 			userPull(colll)
-		}).catch(err => {
+			}).catch(err => {
 			console.error(err)
 		});
 	});
