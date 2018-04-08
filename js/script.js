@@ -33,7 +33,7 @@ function updateInfo(acctInfo) {
   $("#profileEmploymentContent").html(acctInfo.employment);
   $("#profileDependantsContent").html(acctInfo.dependants);
   $("#profileHousingContent").html(acctInfo.housing);
-  $("#leftBarContentProfileBalanceContent").html("$" + acctInfo.balance.toFixed(2));
+  $("#leftBarContentProfileBalanceContent").html("$" + Number.parseFloat(acctInfo.balance).toFixed(2));
 
   updateAssets();
   updateExpenses();
@@ -42,6 +42,7 @@ function updateInfo(acctInfo) {
 
 function updateAssets() {
   $("#rightBarContentAssetsContent").html("");
+  console.log(acctInfo["status"]);
   var assets = acctInfo.assets;
   for (var i = 0; i < assets.length; i++) {
     var assetItem = $("<div></div>");
