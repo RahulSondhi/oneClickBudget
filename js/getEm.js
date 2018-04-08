@@ -89,7 +89,6 @@ function initApplication() {
 			console.log("Found docs", docs)
 			console.log("[MongoDB Stitch]Connected to Case App")
 			pullCase(coll)
-      clearDebug(coll)
 			initUserApplication()
 		}).catch(err => {
 			console.error(err)
