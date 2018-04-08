@@ -1,4 +1,5 @@
 var acctInfo = [];
+var scenarios = [];
 
 $(function() {
 
@@ -13,23 +14,44 @@ $(function() {
 });
 
 function setupAccount() {
-  var tempInfo = getUserThings(tempInfo);
-  tempInfo = tempInfo[0];
-  acctInfo.status = tempInfo.status;
-  acctInfo.employment = tempInfo.employment;
-  acctInfo.dependants = tempInfo.dependants;
-  acctInfo.housing = tempInfo.housing;
-  acctInfo.balance = tempInfo.balance;
-  acctInfo.assets = tempInfo.assets;
-  acctInfo.expenses = tempInfo.expenses;
-  acctInfo.transaction = tempInfo.transaction;
-  acctInfo.day = tempInfo.day;
-  console.log(acctInfo,tempInfo)
-  updateInfo(acctInfo);
+  // var tempInfo = getUserThings(tempInfo);
+  // tempInfo = tempInfo[0];
+  // acctInfo.status = tempInfo.status;
+  // acctInfo.employment = tempInfo.employment;
+  // acctInfo.dependants = tempInfo.dependants;
+  // acctInfo.housing = tempInfo.housing;
+  // acctInfo.balance = tempInfo.balance;
+  // acctInfo.assets = tempInfo.assets;
+  // acctInfo.expenses = tempInfo.expenses;
+  // acctInfo.transaction = tempInfo.transaction;
+  // acctInfo.day = tempInfo.day;
+  acctInfo.status = "Single";
+  acctInfo.employment = "Employed";
+  acctInfo.dependants = "none";
+  acctInfo.housing = "none";
+  acctInfo.balance = 100.10;
+  acctInfo.assets = [{
+    name: "Job",
+    gain: 50.30,
+    frequency: 7
+  }];
+  acctInfo.expenses = [{
+    name: "Food",
+    loss: 4.00,
+    frequency: 1
+  }];
+  acctInfo.transaction = [];
+  acctInfo.day = 0;
+  console.log(acctInfo)
+
+  var tempInfo = getCaseThings(tempInfo);
+  scenarios = tempInfo;
+  console.log(tempInfo)
+  updateInfo();
 }
 
-function updateInfo(acctInfo) {
-  $("#profileStatusContent").html(acctInfo.status);
+function updateInfo() {
+  $("#profileStatusContent").html(acctInfo["status"]);
   $("#profileEmploymentContent").html(acctInfo.employment);
   $("#profileDependantsContent").html(acctInfo.dependants);
   $("#profileHousingContent").html(acctInfo.housing);
@@ -42,7 +64,6 @@ function updateInfo(acctInfo) {
 
 function updateAssets() {
   $("#rightBarContentAssetsContent").html("");
-  console.log(acctInfo["status"]);
   var assets = acctInfo.assets;
   for (var i = 0; i < assets.length; i++) {
     var assetItem = $("<div></div>");
@@ -138,13 +159,40 @@ function incrementDay() {
   var prob = Math.random();
   var prob2 = Math.random();
   if (Math.abs(prob - prob2).toFixed(1) <= 0.1) {
-    console.log("EVENT");
-    $("#eventModal").toggleClass("hidden");
-    $("#screenCover").toggleClass("hidden");
+    initEvent();
   }
   addAssets();
   removeExpenses();
   updateInfo();
+}
+
+function initEvent(){
+  var currentEvt = scenarios[getRandomInt(0,15)];
+  $("#eventModalTitle").html(currentEvt.TransactionName);
+  $("#eventModalScenario").html(currentEvt.scenario);
+  setEventButtons();
+  $("#eventModal").toggleClass("hidden");
+  $("#screenCover").toggleClass("hidden");
+}
+
+function setEventButtons(){
+  $("#eventModalTrueChoice").click(function(){
+
+    $("#eventModal").toggleClass("hidden");
+    $("#screenCover").toggleClass("hidden");
+  });
+
+  $("#eventModalFalseChoice").click(function(){
+
+    $("#eventModal").toggleClass("hidden");
+    $("#screenCover").toggleClass("hidden");
+  });
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
 function addAssets() {

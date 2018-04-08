@@ -27,7 +27,7 @@ function userPull(d) {
 			d.find({}).execute().then(docs => {
 				d.find({}).execute().then(doc => {
 					d.find({}).execute().then(doc => {
-				setTimeout(function () {setupAccount();}, 10000);
+				// setTimeout(function () {setupAccount();}, 1000);
 					})
 				})
 			})
