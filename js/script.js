@@ -3,6 +3,8 @@ var scenarios = [];
 
 $(function() {
 
+  setSky();
+
   $("#centerContentButton").click(function() {
     incrementDay();
   });
@@ -12,6 +14,15 @@ $(function() {
     $("#screenCover").toggleClass("hidden");
   });
 });
+
+
+function setSky() {
+  var time = new Date();
+  $("#stage").addClass("sky-gradient-"+time.getHours());
+  window.setTimeout(function() {
+      setSky();
+  }, 60000);
+}
 
 function setupAccount() {
   var tempInfo = getUserThings(tempInfo);
