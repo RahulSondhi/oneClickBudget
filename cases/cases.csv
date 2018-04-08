@@ -1,12 +1,17 @@
-Scenario:,dIncomePercent,dMoney,Child (B),Asset Name:,Expense Name:,Maritial Status (B),Frequency,Transaction Name
-You are thinking about marrying your significant other. Will you? ,1,-1700,,Spouse's Income,,Married,7,Wedding
-You find $10 on the ground!,0,10,,,,,0,Money on Ground
-A young girl knocks on your door. She's selling girl scout cookies for $5 per box. Do you take one?,0,-5,,,,,0,COOOKIES
-"The faucet leak has gotten worse, and your landlord is responding to your calls. Do you spend the $30 to fix it?",0,-30,,,,,0,Plumber
-"Your neighbor offers $150 to help her move, but your best friend got both of you concert tickets. Do you take the job?",0,150,,,,,0,Love thy Neighbor
-"Your jacket is starting to form holes. Do you buy a replacement now, or wait for it to wear a bit more?",0,,,,,,0,New Jacket
-"You were asked out, will you go?",0,-60,,,,Dating,0,Date Night
-Will you renew Netflix this month?,0,-10,,,,,30,Netflix
-"A few of your coworkers are heading out for lunch. Do you join them, or eat what you brought to work?",0,-15,,,,,0,Lunch with Coworkers
-Your spouse wants to have a baby! What do you think?,0,-100,Child,,Child,,7,Child Stuff
-"You wanna relax and call in sick from work, what do you think?",-0.05,0,,,,,0,Got Caught Playing Sick
+Scenario:,dIncomePercent,dMoney,AssetName,ExpenseName,Child,House,Job ,MaritialStatus,Frequency,TransactionName
+You are thinking about marrying your significant other. Will you? ,1,-1700,Spouse's Income,,,,,Married,-1,Wedding
+You find $10 on the ground!,0,10,,,,,,,-1,Money on Ground
+A young girl knocks on your door. She's selling girl scout cookies for $5 per box. Do you take one?,0,-5,,,,,,,-1,COOOKIES
+"The faucet leak has gotten worse, and your landlord is responding to your calls. Do you spend the $30 to fix it?",0,-30,,,,,,,-1,Plumber
+"Your neighbor offers $150 to help her move, but your best friend got both of you concert tickets. Do you take the job?",0,150,,,,,,,-1,Love thy Neighbor
+"Your jacket is starting to form holes. Do you buy a replacement now, or wait for it to wear a bit more?",0,-150,,,,,,,-1,New Jacket
+"You were asked out, will you go?",0,-60,,,,,,Dating,-1,Date Night
+Will you renew Netflix this month?,0,-10,,,,,,,30,Netflix
+"A few of your coworkers are heading out for lunch. Do you join them, or eat what you brought to work?",0,-15,,,,,,,-1,Lunch with Coworkers
+Your spouse wants to have a baby! What do you think?,0,-100,, Child Stuff,Child,,,,7,Child Stuff
+"You wanna relax and call in sick from work, what do you think?",-0.05,0,Demotion,,,,Demotion,,14,Got Caught Playing Sick
+Spotify Premium is on sale! Lock in now for only 5$ a month! ,0,5,,,,,,,30,Spotify Premium
+"Nasdaq Skyrockets, invest some money in it?",0.1,-100,Nasdaq,,,,,,30,Nasdaq
+The apartment you were looking at is available. Buy it?,0,-700,,Apartment,,Apartment,,,31,Apartment
+The house you were looking at is available. Buy it?,0,-1400,,House,,House,,,31,House
+Your preformance at work has been noticed. You are offered a raise. Take it?,0.2,0,Promotion,,,,Promotion,,14,Job
