@@ -75,6 +75,15 @@ function clearDebug(d) {
 			loss: 30.00,
 			frequency: 7
 		}, {
+			name: "Taxes",
+			loss: 278.00,
+			frequency: 365
+		},{
+			name: "Insurance",
+			loss: 221.00,
+			frequency: 31
+		},
+		 {
 			name: "Personal Care",
 			loss: 14.86,
 			frequency: 7
