@@ -77,7 +77,7 @@ function addUser(d,spouse,job,children,house,balance, assets, expenses, transact
 }
 function clearDebug(d) {
 	d.deleteMany({})
-	addUser(d, "Single", "Employed", "none", "none", 100.00, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
+	editUserStats(d, "Single", "Employed", "none", "none", 100.00, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
 }
 function initApplication() {
 	return stitch.StitchClientFactory.create(appId).then(client => {
