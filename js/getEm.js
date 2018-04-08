@@ -7,7 +7,6 @@ var user = null;
 
 $(function() {
 	initApplication();
-	initUserApplication();
 })
 
 function pullCase(d) {
@@ -20,17 +19,20 @@ function pullCase(d) {
 function userPull(d) {
 	d.find({}).execute().then(docs => {
 		user = docs
+		setupAccount();
 		console.log(user)
 		console.log("Done")
 	})
 }
 
-function getUserThings(){
-	return user;
+function getUserThings(acctInfo){
+	acctInfo = user;
+	return acctInfo
 }
 
-function getCaseThings(){
-	return caser;
+function getCaseThings(caseInfo){
+	caseInfo = caser;
+	return caseInfo;
 }
 
 function editUserStats(d,spouse,job,children,house,balance,assests, expenses,transaction,day)
@@ -80,6 +82,7 @@ function initApplication() {
 			console.log("Found docs", docs)
 			console.log("[MongoDB Stitch]Connected to Case App")
 			pullCase(coll)
+			initUserApplication()
 		}).catch(err => {
 			console.error(err)
 		});
@@ -99,7 +102,7 @@ function initUserApplication() {
 			console.log("Found docs", docs)
 			console.log("[MongoDB Stitch]Connected to User App")
 			clearDebug(colll)
-			addUser(colll, "Single", "Employed", "none", "none", 100, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
+			addUser(colll, "Single", "Employed", "none", "none", 100.00, [{name: "Job", gain: 440.00, frequency: 14}], [{name: "Food", loss: 8.00, frequency: 1},{name: "Gas", loss: 30.00, frequency: 7},{name: "Personal Care", loss: 14.86, frequency: 7}], [],0)
 			userPull(colll)
 			}).catch(err => {
 			console.error(err)

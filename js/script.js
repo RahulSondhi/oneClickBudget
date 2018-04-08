@@ -1,7 +1,6 @@
 var acctInfo;
 
 $(function() {
-  setupAccount();
 
   $("#centerContentButton").click(function() {
     incrementDay();
@@ -14,13 +13,12 @@ $(function() {
 });
 
 function setupAccount() {
-  acctInfo = getUserThings();
+  acctInfo = getUserThings(acctInfo);
   console.log(acctInfo);
   updateInfo(acctInfo);
 }
 
 function updateInfo(acctInfo) {
-  console.log(acctInfo);
   $("#profileStatusContent").html(acctInfo["status"]);
   $("#profileEmploymentContent").html(acctInfo.employment);
   $("#profileDependantsContent").html(acctInfo.dependants);
